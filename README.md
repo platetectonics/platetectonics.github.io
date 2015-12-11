@@ -1,4 +1,3 @@
-hello-world
+platetectonics.github.io
 ===========
-
-My first repository! :P
+Science Project for Plate Tectonics
