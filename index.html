@@ -3,7 +3,6 @@
 <html>
 <head>
   <title>Plate Tectonics</title>
-  
   <style type='text/css'>
     div {
   position: absolute;
@@ -16,6 +15,10 @@ button {
   margin: 0px 0px 0px 0px;
 }
 
+.lr {
+  background-color: #3fe164;
+  width: 49vw;
+}
 #b_tran {
   width: 21.6vw;
   height: 5vw;
@@ -24,6 +27,9 @@ button {
   margin: 0px 0px 0px 0px;
 }
 
+#d_lr {
+  top: 75%;
+}
 button:hover {
   background-image: url("http://dl.glitter-graphics.com/pub/1525/1525098f7l5ay8r9o.gif");
 }
@@ -43,7 +49,16 @@ button:hover {
 
 #i_tran {
   width:110%;
-  
+}
+
+#homettl {
+  width: 99.5%;
+}
+
+#p_home {
+  font-size: 40pt;
+  text-align: justify;
+  padding: 1px;
 }
   </style>
   
@@ -51,7 +66,7 @@ button:hover {
 
 
 
-<script type='text/javascript'>//<![CDATA[
+<script type='text/javascript'>
 window.onload=function(){
 function ge(element) {
   return document.getElementById(element);
@@ -113,22 +128,24 @@ ge("b_con2").addEventListener('click', b_con2);
 ge("b_div").addEventListener('click', b_div);
 ge("b_tran").addEventListener('click', b_tran);
 
-}//]]> 
-
+setInterval(function () {
+  if(ge("home").style.display == "inline") ge("d_lr").style.display = "none";
+  else ge("d_lr").style.display = "inline";
+}, 16);
+}
 </script>
 
 </head>
 <body>
   <div id="home">
-   HOME MEMES LEL STUFF JOHN CENA APPLES DISCREPENCY
-   The Theory of Plate Tectonics
-   The theory of plate tectonics is a theory that was tried to be proved by a man named Alfred Wegener. In the 1900, people believed that he was crazy, like all other people who tried to prove an excellent theory. Plate tectonics is the theory that the outer rigid layer of the earth (the lithosphere) is divided into a couple of dozen "plates" that move around across the earth's surface relative to each other, like slabs of ice on a lake.
-
+   <img id="homettl" src="https://4.bp.blogspot.com/-dujvh6CDEEU/VmoH9Zny54I/AAAAAAAAAPI/I9PsxgIx8E8/s1600/TheTheoryofPlateTec.gif" />
+   <p id="p_home">
+   The theory of plate tectonics is a theory that was tried to be proved by a man named Alfred Wegener. In the 1900, people believed that he was crazy, like all other people who tried to prove an excellent theory. Plate tectonics is the theory that the outer rigid layer of the earth (the lithosphere) is divided into a couple of dozen "plates" that move around across the earth's surface relative to each other, like slabs of ice on a lake.</p>
 </div>
 <div id="convergecol">
-  CONVERGENT COLLISION
+converge collisional
 </div>
-<div id="convergesub">  
+<div id="convergesub">
   CONVERGENT SUBDUCTION
 </div>
 <div id="divergent">
@@ -137,6 +154,10 @@ ge("b_tran").addEventListener('click', b_tran);
 <div id="transform">
   TRANSFORM
 </div>
+  <div id="d_lr">
+    <button id="b_l" class="lr"> &#60;-----</button>
+    <button id="b_r" class="lr">--------&#62;</button>
+  </div>
 <div id="menu">
 <hr>
 <button id="b_home"><img src="https://2.bp.blogspot.com/-pdj2Mc_ygyk/VmjC0BzpyfI/AAAAAAAAAOA/6xblz62KRqk/s1600/Home.gif" /></button>
@@ -144,7 +165,7 @@ ge("b_tran").addEventListener('click', b_tran);
 <button id="b_con2"><img id="i_consub" src="https://1.bp.blogspot.com/-ZeGcBGrELNA/VmjpXXtAV_I/AAAAAAAAAOc/4oLsdDi5XEE/s1600/Convergent%2B%25281%2529.gif" /></button>
 <button id="b_div"><img id="i_div" src="https://3.bp.blogspot.com/-x0uI1m1e7tM/Vmjp8wqjaKI/AAAAAAAAAOk/0qFJum_PXKw/s1600/Divergent.gif" /></button>
 <button id="b_tran"><center><img id="i_tran" src="https://1.bp.blogspot.com/-9AYwcPXXkns/VmjqnM94OzI/AAAAAAAAAOw/J22NJD_sTnM/s1600/Transform.gif" /></center></button>
-</div>
+  </div>
   
 </body>
 
