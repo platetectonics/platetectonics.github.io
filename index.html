@@ -229,7 +229,7 @@ setInterval(function() {
     if (imageNum == 0) ge("b_l").disabled = true;
     else ge("b_l").disabled = false;
     if (imageNum == 4) ge("b_r").disabled = true;
-    ge("b_r").disabled = false;
+    else ge("b_r").disabled = false;
   }
   if (shown("convergesub")) {
     if (imageNum == 0) ge("b_l").disabled = true;
@@ -241,13 +241,13 @@ setInterval(function() {
     if (imageNum == 4) ge("b_l").disabled = true;
     else ge("b_l").disabled = false;
     if (imageNum == 0) ge("b_r").disabled = true;
-    ge("b_r").disabled = false;
+    else ge("b_r").disabled = false;
   }
   if (shown("transform")) {
   	if (imageNum == 0) ge("b_l").disabled = true;
     else ge("b_l").disabled = false;
     if (imageNum == 1) ge("b_r").disabled = true;
-    ge("b_r").disabled = false;
+    else ge("b_r").disabled = false;
   }
 }, 10)
 
