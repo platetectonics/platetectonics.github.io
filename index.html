@@ -8,7 +8,7 @@
   font-family: 'Droid Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Droid Sans'), local('DroidSans'), url(http://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  src: local('Droid Sans'), local('DroidSans'), url(https://fonts.gstatic.com/s/droidsans/v6/s-BiyweUPV0v-yRb-cjciAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -98,8 +98,22 @@ button:hover {
 }
 
 .int {
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 99%;
+}
+
+.map {
+  position:absolute;
+  top: 35vw;
+  left: 0px;
+}
+
+.info {
+  display: inline-block;
+  top: 32vw;
+  position:absolute;
+  left: 22.5vw;
+  font-size:30pt;
 }
   </style>
   
@@ -139,7 +153,7 @@ function init() {
 }
 
 function b_home() {
-	ge("key").play();
+  ge("key").play();
   imageNum = 0;
   show("home");
   hide("convergecol");
@@ -149,7 +163,7 @@ function b_home() {
 }
 
 function b_con1() {
-	ge("key").play();
+  ge("key").play();
   imageNum = 4;
   hide("home");
   show("convergecol");
@@ -159,7 +173,7 @@ function b_con1() {
 }
 
 function b_con2() {
-	ge("key").play();
+  ge("key").play();
   imageNum = 4;
   hide("home");
   hide("convergecol");
@@ -169,7 +183,7 @@ function b_con2() {
 }
 
 function b_div() {
-	ge("key").play();
+  ge("key").play();
   imageNum = 0;
   hide("home");
   hide("convergecol");
@@ -179,7 +193,7 @@ function b_div() {
 }
 
 function b_tran() {
-	ge("key").play();
+  ge("key").play();
   imageNum = 0;
   hide("home");
   hide("convergecol");
@@ -196,35 +210,60 @@ ge("b_con2").addEventListener('click', b_con2);
 ge("b_div").addEventListener('click', b_div);
 ge("b_tran").addEventListener('click', b_tran);
 ge("b_l").addEventListener('click', function() {
-	ge("key").play();
+  ge("key").play();
   imageNum--;
 });
 ge("b_r").addEventListener('click', function() {
-	ge("key").play();
+  ge("key").play();
   imageNum++;
 });
 
 setInterval(function() {
   if (ge("home").style.display == "inline") hide("d_lr");
   else show("d_lr");
-  hide("base1");hide("base2");hide("base3");hide("base4");
-  hide("a1");hide("b1");hide("c1");hide("d1");hide("a2");
-  hide("b2");hide("c2");hide("a3");hide("b3");hide("c3");
-  hide("a4");hide("b4");hide("c4");
+  hide("base1");
+  hide("base2");
+  hide("base3");
+  hide("base4");
+  hide("a1");
+  hide("b1");
+  hide("c1");
+  hide("d1");
+  hide("a2");
+  hide("b2");
+  hide("c2");
+  hide("a3");
+  hide("b3");
+  hide("c3");
+  hide("a4");
+  hide("b4");
+  hide("c4");
   if (imageNum == 0) {
-    show("a4");show("b4");show("base3");show("base4");
+    show("a4");
+    show("b4");
+    show("base3");
+    show("base4");
   }
   if (imageNum == 1) {
-    show("a3");show("b3");show("c1");show("d1");
+    show("a3");
+    show("b3");
+    show("c1");
+    show("d1");
   }
   if (imageNum == 2) {
-    show("a2");show("b2");show("c2");
+    show("a2");
+    show("b2");
+    show("c2");
   }
   if (imageNum == 3) {
-    show("a1");show("b1");show("c3");
+    show("a1");
+    show("b1");
+    show("c3");
   }
   if (imageNum == 4) {
-    show("base1");show("base2");show("c4");
+    show("base1");
+    show("base2");
+    show("c4");
   }
 }, 10);
 
@@ -248,12 +287,17 @@ setInterval(function() {
     else ge("b_r").disabled = false;
   }
   if (shown("transform")) {
-  	if (imageNum == 0) ge("b_l").disabled = true;
+    if (imageNum == 0) ge("b_l").disabled = true;
     else ge("b_l").disabled = false;
     if (imageNum == 1) ge("b_r").disabled = true;
     else ge("b_r").disabled = false;
   }
 }, 10);
+
+/*ge("bgmusic").play();
+setInterval(function () {
+	ge("bgmusic").play();
+}, 215000)*/
 
 }//]]> 
 
@@ -264,37 +308,43 @@ setInterval(function() {
   <div id="home">
   <img id="homettl" src="https://4.bp.blogspot.com/-dujvh6CDEEU/VmoH9Zny54I/AAAAAAAAAPI/I9PsxgIx8E8/s1600/TheTheoryofPlateTec.gif" />
   <p id="p_home">
-    The theory of plate tectonics is a theory that was tried to be proved by a man named Alfred Wegener. In the 1900's, people believed that he was crazy and had lost his mind, like all other people who tried to prove an excellent theory. Plate tectonics
-    is the theory that the outer rigid layer of the earth (the lithosphere) is divided into a couple of dozen "plates" that move around across the earth's surface relative to each other, like slabs of ice on a lake.</p>
+    The theory of plate tectonics is a theory that was tried to be proved by a man named Alfred Wegener. In the 1900's, people believed that he was crazy and had lost his mind, like all other people who tried to prove an excellent theory. Plate tectonics is the theory that the outer rigid layer of the earth (the lithosphere) is divided into a couple of dozen "plates" that move around across the earth's surface relative to each other, like slabs of ice on a lake.</p>
 </div>
 
 <div id="convergecol">
-  <img id="base1" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int"/>
-  <img id="a1" src="https://cloud.githubusercontent.com/assets/10279512/11757672/3fc2603a-a018-11e5-9d87-feef01253222.png" class="int"/>
-  <img id="a2" src="https://cloud.githubusercontent.com/assets/10279512/11757673/3fc30ed6-a018-11e5-89c5-df140dff55c6.png" class="int"/>
-  <img id="a3" src="https://cloud.githubusercontent.com/assets/10279512/11757671/3fc1794a-a018-11e5-9fe8-9cac5b7dc3c9.png" class="int"/>
-  <img id="a4" src="https://cloud.githubusercontent.com/assets/10279512/11757670/3fc126f2-a018-11e5-824d-6aa719a5ca0e.png" class="int"/>
+  <img id="base1" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int" />
+  <img id="a1" src="https://cloud.githubusercontent.com/assets/10279512/11757672/3fc2603a-a018-11e5-9d87-feef01253222.png" class="int" />
+  <img id="a2" src="https://cloud.githubusercontent.com/assets/10279512/11757673/3fc30ed6-a018-11e5-89c5-df140dff55c6.png" class="int" />
+  <img id="a3" src="https://cloud.githubusercontent.com/assets/10279512/11757671/3fc1794a-a018-11e5-9fe8-9cac5b7dc3c9.png" class="int" />
+  <img id="a4" src="https://cloud.githubusercontent.com/assets/10279512/11757670/3fc126f2-a018-11e5-824d-6aa719a5ca0e.png" class="int" />
+  <img src="https://cloud.githubusercontent.com/assets/16234906/11826716/e578609e-a33b-11e5-9509-1c8094e86d47.png" class="map"/> <p class="info">Convergent collisional faults occur when two plates of continental crust collide with each other. It usually forms a mountain.</p>
+  
 </div>
 
 <div id="convergesub">
-  <img id="base2" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int"/>
-  <img id="b1" src="https://cloud.githubusercontent.com/assets/10279512/11757674/3fd33612-a018-11e5-860a-389e7e51971b.png" class="int"/>
-  <img id="b2" src="https://cloud.githubusercontent.com/assets/10279512/11757675/3fd36092-a018-11e5-9389-290b85e3d885.png" class="int"/>
-  <img id="b3" src="https://cloud.githubusercontent.com/assets/10279512/11757676/3fd44ab6-a018-11e5-8e78-9955a3afa087.png" class="int"/>
-  <img id="b4" src="https://cloud.githubusercontent.com/assets/10279512/11757678/3fd5fc76-a018-11e5-9b4a-ebdce1bd464e.png" class="int"/>
+  <img id="base2" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int" />
+  <img id="b1" src="https://cloud.githubusercontent.com/assets/10279512/11757674/3fd33612-a018-11e5-860a-389e7e51971b.png" class="int" />
+  <img id="b2" src="https://cloud.githubusercontent.com/assets/10279512/11757675/3fd36092-a018-11e5-9389-290b85e3d885.png" class="int" />
+  <img id="b3" src="https://cloud.githubusercontent.com/assets/10279512/11757676/3fd44ab6-a018-11e5-8e78-9955a3afa087.png" class="int" />
+  <img id="b4" src="https://cloud.githubusercontent.com/assets/10279512/11757678/3fd5fc76-a018-11e5-9b4a-ebdce1bd464e.png" class="int" />
+  <img src="https://cloud.githubusercontent.com/assets/16234906/11826717/e578a90a-a33b-11e5-885b-fe34374f2c8d.png" class="map" />
+  <p class="info">Convergent subductional boundaries are like convergent collisional except one plate goes under the other. This usually forms and volcano.</p>
 </div>
 
 <div id="divergent">
-  <img id="base3" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int"/>
-  <img id="c1" src="https://cloud.githubusercontent.com/assets/10279512/11757677/3fd5a294-a018-11e5-9ae9-59cacdf4d7e6.png" class="int"/>
-  <img id="c2" src="https://cloud.githubusercontent.com/assets/10279512/11757679/3fd60cde-a018-11e5-8663-d3a94b5965c8.png" class="int"/>
-  <img id="c3" src="https://cloud.githubusercontent.com/assets/10279512/11757681/3fe62b32-a018-11e5-8fb3-699aba2fbeec.png" class="int"/>
-  <img id="c4" src="https://cloud.githubusercontent.com/assets/10279512/11757680/3fe58b82-a018-11e5-8566-ccd71b7bbb31.png" class="int"/>
+  <img id="base3" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int" />
+  <img id="c1" src="https://cloud.githubusercontent.com/assets/10279512/11757677/3fd5a294-a018-11e5-9ae9-59cacdf4d7e6.png" class="int" />
+  <img id="c2" src="https://cloud.githubusercontent.com/assets/10279512/11757679/3fd60cde-a018-11e5-8663-d3a94b5965c8.png" class="int" />
+  <img id="c3" src="https://cloud.githubusercontent.com/assets/10279512/11757681/3fe62b32-a018-11e5-8fb3-699aba2fbeec.png" class="int" />
+  <img id="c4" src="https://cloud.githubusercontent.com/assets/10279512/11757680/3fe58b82-a018-11e5-8566-ccd71b7bbb31.png" class="int" />
+  <img src="https://cloud.githubusercontent.com/assets/16234906/11826715/e577f4d8-a33b-11e5-97db-2caf4d379c32.png" class="map" />
+  <p class="info">Divergent boundaries move away from each other. They allow lava to escape from the mantle. That lava cools and forms new crust.</p>
 </div>
-
 <div id="transform">
-  <img id="base4" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int"/>
-  <img id="d1" src="https://cloud.githubusercontent.com/assets/10279512/11757669/3fc0c23e-a018-11e5-867d-0471c5d4cce2.png" class="int"/>
+  <img id="base4" src="https://cloud.githubusercontent.com/assets/10279512/11757668/3fc0d2f6-a018-11e5-87b1-b997eca9d353.png" class="int" />
+  <img id="d1" src="https://cloud.githubusercontent.com/assets/10279512/11757669/3fc0c23e-a018-11e5-867d-0471c5d4cce2.png" class="int" />
+  <img src="https://cloud.githubusercontent.com/assets/16234906/11826718/e5792196-a33b-11e5-91c2-1aff799c8299.png" class="map"/>
+  <p class="info">Transform boundaries move harmlessly next to each other. This sometimes causes earthquakes to happen at these boundaries. </p>
 </div>
 
 <!-- END OF MAIN SCREENS -->
@@ -318,6 +368,10 @@ setInterval(function() {
 <audio id="key" style="display:none" controls>
   <source src="http://spafindoople.github.io/key.mp3" type="audio/mpeg" />
 </audio>
+<audio id="bgmusic" style="display:none" controls>
+<source src="http://spafindoople.github.io/songity.mp3" type="audio/mpeg">
+</audio>
+
   
 </body>
 
